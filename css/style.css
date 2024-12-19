@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #009CFF;
+    --warning: #ffcc00;
     --secondary: #777777;
     --light: #F8F8F8;
     --dark: #252525;
@@ -36,7 +36,7 @@
     transition: .5s;
 }
 
-.btn.btn-primary {
+.btn.btn-warning {
     color: #FFFFFF;
 }
 
@@ -212,7 +212,7 @@
     height: 2px;
     top: 4px;
     left: -40px;
-    background: var(--primary);
+    background: var(--warning);
     z-index: -1;
 }
 
@@ -223,7 +223,7 @@
     height: 2px;
     bottom: 4px;
     left: -60px;
-    background: var(--primary);
+    background: var(--warning);
     z-index: -1;
 }
 
@@ -253,7 +253,7 @@
     left: 0;
     right: 3rem;
     bottom: 3rem;
-    border: 5px solid var(--primary);
+    border: 5px solid var(--warning);
     border-radius: 6px;
 }
 
@@ -349,8 +349,8 @@
 .project-carousel .owl-dot:hover,
 .project-carousel .owl-dot.active {
     color: #FFFFFF;
-    border-color: var(--primary);
-    background: var(--primary);
+    border-color: var(--warning);
+    background: var(--warning);
 }
 
 
@@ -417,7 +417,7 @@
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item {
-    background: var(--primary) !important;
+    background: var(--warning) !important;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item * {
@@ -447,8 +447,8 @@
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
     color: #FFFFFF;
-    border-color: var(--primary);
-    background: var(--primary);
+    border-color: var(--warning);
+    background: var(--warning);
 }
 
 
@@ -474,7 +474,7 @@
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary);
+    color: var(--warning);
     letter-spacing: 1px;
     box-shadow: none;
 }
@@ -490,5 +490,5 @@
 }
 
 .footer .copyright a:hover {
-    color: var(--primary);
+    color: var(--warning);
 }

@@ -14,7 +14,11 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -35,8 +39,8 @@
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
-        <i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
+        <div class="spinner-border position-relative text-warning" style="width: 6rem; height: 6rem;" role="status"></div>
+        <i class="fa fa-laptop-code fa-2x text-warning position-absolute top-50 start-50 translate-middle"></i>
     </div>
     <!-- Spinner End -->
 
@@ -55,10 +59,10 @@
             <div class="col-lg-6 px-5 text-end">
                 <small>Follow us:</small>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn-square text-warning border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-square text-warning border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn-square text-warning border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn-square text-warning pe-0" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -66,43 +70,81 @@
     <!-- Topbar End -->
 
 
-  <!-- Brand & Contact Start -->
+<!-- Brand & Logo Start -->
 <div class="container-fluid py-2 px-2 wow fadeIn" data-wow-delay="0.1s">
-    <div class="row align-items-center text-center">
-        <!-- Left Image -->
-        <div class="col-6 col-md-4 mb-3 mb-md-0 d-flex justify-content-start justify-content-center">
-            <img src="img/award.png" alt="Left Image" class="img-fluid" style="max-width: 80px; height: auto;">
-        </div>
-
-        <!-- Brand Name -->
-        <div class="col-12 col-md-4 mb-3 mb-md-0">
-            <h1 class="fw-bold text-primary m-0 text-center">Swami Brahmanand Award</h1>
+    <div class="row align-items-center text-start">
+        <!-- Left Logo and Brand Name -->
+        <div class="col-12 col-md-6 d-flex align-items-center">
+            <img src="img/award.png" alt="Logo" class="img-fluid me-3" style="max-width: 110px; height: auto;">
+            <div class="brand-box">
+                <h1 class="brand-name m-0">Swami Brahmanand Award</h1>
+            </div>
         </div>
 
         <!-- Right Image -->
-        <div class="col-6 col-md-4 mb-3 mb-md-0 d-flex justify-content-end justify-content-center">
+        <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
             <img src="img/sblogo.png" alt="Right Image" class="img-fluid" style="max-width: 80px; height: auto;">
         </div>
     </div>
 </div>
-<!-- Brand & Contact End -->
+<!-- Brand & Logo End -->
+
+<style>
+    /* 3D Box Style */
+    .brand-box {
+        background: #f8f9fa; /* Light background for the box */
+        border: 1px solid #e0e0e0; /* Subtle border for the box */
+        box-shadow: 
+            2px 2px 5px rgba(0, 0, 0, 0.2), 
+            4px 4px 10px rgba(0, 0, 0, 0.1); /* 3D shadow */
+        padding: 10px 20px; /* Padding for the brand name */
+        border-radius: 50px; /* Rounded corners */
+        display: inline-block; /* Fit to content */
+    }
+
+    /* 3D Text Effect */
+    .brand-name {
+        font-family: 'Poppins', sans-serif; /* Example custom font */
+        color: #ff4107; /* Gold color */
+        font-size: 1.85rem; /* Adjust as needed */
+        text-shadow: 
+            2px 2px 2px #b8efad, /* Sharp shadow */
+            4px 4px 4px rgba(0, 0, 0, 0.5); /* Softer outer shadow */
+        transform: perspective(500px) rotateX(10deg); /* 3D tilt effect */
+        letter-spacing: 1px; /* Spacing for clarity */
+        text-align: center; /* Center the text inside the box */
+        margin: 0; /* Reset margin */
+    }
+
+    /* Optional for responsiveness */
+    @media (max-width: 768px) {
+        .brand-name {
+            font-size: 1.5rem; /* Smaller font for mobile */
+        }
+    }
+</style>
+
 
 
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <nav class="navbar navbar-expand-lg bg-warning navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn " data-wow-delay="0.1s">
         <a href="#" class="navbar-brand ms-3 d-lg-none">MENU</a>
         <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav me-auto p-3 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="service.html" class="nav-item nav-link">Initiative Areas</a>
-                <a href="project.html" class="nav-item nav-link">Projects</a>
-                <a href="payment.html" class="nav-item nav-link">Payment</a>
+                <a href="index.html" class="nav-item nav-link active fw-bold">Home</a>
+                <a href="#initiative_areas" class="nav-item nav-link">Initiative Areas</a>
+                <a href="#award_commitee" class="nav-item nav-link"> Award Committee</a>
+                <a href="#" class="nav-item nav-link">Mission</a>
+                <a href="#footer" class="nav-item nav-link">Vision</a>
+                <a href="#footer" class="nav-item nav-link">Gallery</a>
+                <a href="#footer" class="nav-item nav-link">Media</a>
+                <a href="#about_us" class="nav-item nav-link">About Us</a>
+
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
@@ -112,9 +154,9 @@
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div> -->
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                <a href="#footer" class="nav-item nav-link">Contact Us</a>
             </div>
-            <!-- <a href="" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Omega Plus</a> -->
+            <a href="" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block shadow">Nomination</a> 
         </div>
     </nav>
     <!-- Navbar End -->
@@ -184,28 +226,28 @@
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-certificate fa-4x text-primary mb-4"></i>
+                        <i class="fa fa-certificate fa-4x text-warning mb-4"></i>
                         <h5 class="mb-3">Years</h5>
                         <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-users-cog fa-4x text-primary mb-4"></i>
+                        <i class="fa fa-users-cog fa-4x text-warning mb-4"></i>
                         <h5 class="mb-3">Committee Members</h5>
                         <h1 class="display-5 mb-0" data-toggle="counter-up">7</h1>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-users fa-4x text-primary mb-4"></i>
+                        <i class="fa fa-users fa-4x text-warning mb-4"></i>
                         <h5 class="mb-3">Total Award Winners</h5>
                         <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-check fa-4x text-primary mb-4"></i>
+                        <i class="fa fa-check fa-4x text-warning mb-4"></i>
                         <h5 class="mb-3">Regions</h5>
                         <h1 class="display-5 mb-0" data-toggle="counter-up">4</h1>
                     </div>
@@ -217,20 +259,22 @@
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <div id="about_us" class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="img-border">
-                        <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                        <img class="img-fluid" src="img/swamiji.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                        <h1 class="display-6 mb-4">#1 Digital Solution With <span class="text-primary">4 Years</span> Of Experience</h1>
-                        <p>At Omega Plus, we are the #1 digital solution provider with over 4 years of experience. We deliver innovative and tailored solutions to drive growth and enhance your online presence. Trust our dedicated team to lead your digital transformation with excellence and creativity.
+                        <h6 class="section-title bg-white text-start text-warning pe-3">About Us</h6>
+                        <h1 class="display-6 mb-4">We recognize people who work in the field of Education,Goseva <span class="text-warning">5 Years</span> </h1>
+                        <p>We promote awareness and encourage contributions from the elite society in the fields of education and cow protection. Our mission is to highlight exemplary work and inspire meaningful action in these crucial areas.
+                        On 125th birth anniversary year of Swami Brahmanand, Writer Journalist from Delhi, Amit Rajput, who worked as Program Coordinator in Community Radio of the Autonomous Indian Institute of Mass Communication, Ministry of Information and Broadcasting, Government of India, considered the award, Because of the many works done by Swamiji on this 125th birthday, two special contributions to enhance the tradition of education and service in the field of Gauseva and to encourage the people working in these areas’ Swami Brahmanand Award should be started
                         </p>
+                        <!--
                         <div class="d-flex align-items-center mb-4 pb-2">
                             <img class="flex-shrink-0 rounded-circle" src="img/carousel-1.jpg" alt="" style="width: 50px; height: 50px;">
                             <div class="ps-4">
@@ -238,7 +282,8 @@
                                 <small>Founder</small>
                             </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
+                        -->
+                        <a class="btn btn-warning rounded-pill py-3 px-5" href="">Read More</a>
                     </div>
                 </div>
             </div>
@@ -248,31 +293,32 @@
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div id="initiative_areas" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-                <h1 class="display-6 mb-4">We Focuse On Making The Best In All Sectors</h1>
+                <h6 class="section-title bg-white text-center text-warning px-3">Initiative Areas</h6>
+                <h1 class="display-6 mb-4">Promoting Education and Cow Protection</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-1.jpg" alt="">
-                        <h4 class="mb-0">Web Design</h4>
+                        <img class="img-fluid rounded mb-4" src="img/education.JPG" alt="">
+                        <h4 class="mb-0">EDUCATION</h4>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-2.jpg" alt="">
-                        <h4 class="mb-0">App Development</h4>
+                        <img class="img-fluid rounded mb-4" src="img/goseva.jpg" alt="">
+                        <h4 class="mb-0">GOSEVA</h4>
                     </a>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <!--<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <a class="service-item d-block rounded text-center h-100 p-4" href="">
                         <img class="img-fluid rounded mb-4" src="img/service-3.jpg" alt="">
                         <h4 class="mb-0">SEO Optimization</h4>
                     </a>
                 </div>
+                -->
                 <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <a class="service-item d-block rounded text-center h-100 p-4" href="">
                         <img class="img-fluid rounded mb-4" src="img/service-4.jpg" alt="">
@@ -297,46 +343,47 @@
     <!-- Service End -->
 
 
-    <!-- Feature Start -->
+    <!-- About swami ji Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="h-100">
-                        <h6 class="section-title bg-white text-start text-primary pe-3">Why Choose Us</h6>
-                        <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>
-                        <p class="mb-4">At Omega Plus, our clients trust us because of our proven track record of delivering exceptional digital solutions for over 4 years. Our commitment to innovation, excellence, and personalized service ensures we meet and exceed your expectations. Learn more about how we can transform your digital presence and drive your success.</p>
+                        <h6 class="section-title bg-white text-start text-warning pe-3">About</h6>
+                        <h1 class="display-6 mb-4">Tyagmurti Swami
+Brahmanand</h1>
+                        <p class="mb-4">Swami Brahmanand ji was born on 04 December 1894 AD in village Barhara of Hamirpur district in Bundelkhand region of Uttar Pradesh. Swami Brahmanand's father was Matadin Lodhi, who belonged to the prosperous farming family of the region. His mother's name was Yashodabai who was a housewife of religious nature. Swami Brahmanand's childhood name was Shivdayal. Swami Brahmanand ji's warning education took place in the village itself.</p>
                         <div class="row g-4">
                             <div class="col-12">
                                 <div class="skill">
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Mobile App Development</p>
-                                        <p class="mb-2">95%</p>
+                                        <p class="mb-2">Birth</p>
+                                        <p class="mb-2">04-12-1894 AD</p>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="skill">
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Website Development</p>
-                                        <p class="mb-2">90%</p>
+                                        <p class="mb-2">Birth Place</p>
+                                        <p class="mb-2">Barhara,Hamirpur,U.P.</p>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="skill">
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Design & Development</p>
-                                        <p class="mb-2">95%</p>
+                                        <p class="mb-2">Remembrance day</p>
+                                        <p class="mb-2">13 September 1984</p>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -345,114 +392,74 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="img-border">
-                        <img class="img-fluid" src="img/feature.jpg" alt="">
+                        <img class="img-fluid" src="img/swamiji.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Feature End -->
+    <!-- About Swami ji End -->
 
 
-    <!-- Project Start -->
-    <div class="container-xxl py-5">
+    <!-- Previous Winners Start -->
+    <div id="previous_winners" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Our Projects</h6>
-                <h1 class="display-6 mb-4">Learn More About Our Complete Projects</h1>
+                <h6 class="section-title bg-white text-center text-warning px-3">Previous Award Winners</h6>
+                <h3 class="display-6 mb-4">Discover past Winners and inspiring stories.</h3>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="project-item border rounded h-100 p-4" data-dot="01">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-1.jpg" alt="">
-                        <a href="img/project-1.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                        <img class="img-fluid rounded" src="img/ms_fredericka.png" alt="">
+                        <a href="img/ms_fredericka.png" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
+                    <h6>Ms. Frederika Irina Bruning</h6>
+                    <span>Came as a German tourist but established one of the best cow sheds, Surbhi Radha Gaushala in Mathura,Becoming known as Sudevi Dasi</span>
                 </div>
                 <div class="project-item border rounded h-100 p-4" data-dot="02">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-2.jpg" alt="">
-                        <a href="img/project-2.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                        <img class="img-fluid rounded" src="img/Dr_arun.png" alt="">
+                        <a href="img/Dr_arun.png" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
+                    <h6>Dr. Arun Kumar Pandey</h6>
+                    <span>Academic advisor at Avadh University who strengthened India's cultural and educationalties in South Korea</span>
                 </div>
                 <div class="project-item border rounded h-100 p-4" data-dot="03">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-3.jpg" alt="">
-                        <a href="img/project-2.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                        <img class="img-fluid rounded" src="img/Anand_kumar.png" alt="">
+                        <a href="img/Anand_kumar.png" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
+                    <h6>Anand Kumar</h6>
+                    <span>Founded one of India's most prominent and popular non-profit JEE coching centers,Super 30</span>
                 </div>
                 <div class="project-item border rounded h-100 p-4" data-dot="04">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-4.jpg" alt="">
-                        <a href="img/project-4.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                        <img class="img-fluid rounded" src="img/Bhadariya_maharaj.png" alt="">
+                        <a href="img/Bhadariya_maharaj.png" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
+                    <h6>Bhadariya Maharaj</h6>
+                    <span>Founded the World's largest cow shed,Bhadariya Gaushala,spanning over 100,000 hectares in Jaisalmer</span>
                 </div>
                 <div class="project-item border rounded h-100 p-4" data-dot="05">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-5.jpg" alt="">
-                        <a href="img/project-5.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                        <img class="img-fluid rounded" src="img/mr_ranjeet.png" alt="">
+                        <a href="img/mr_ranjeet.png" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
-                </div>
-                <div class="project-item border rounded h-100 p-4" data-dot="06">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-6.jpg" alt="">
-                        <a href="img/project-6.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                    </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
-                </div>
-                <div class="project-item border rounded h-100 p-4" data-dot="07">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-7.jpg" alt="">
-                        <a href="img/project-7.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                    </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
-                </div>
-                <div class="project-item border rounded h-100 p-4" data-dot="08">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-8.jpg" alt="">
-                        <a href="img/project-8.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                    </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
-                </div>
-                <div class="project-item border rounded h-100 p-4" data-dot="09">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-9.jpg" alt="">
-                        <a href="img/project-9.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                    </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
-                </div>
-                <div class="project-item border rounded h-100 p-4" data-dot="10">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded" src="img/project-10.jpg" alt="">
-                        <a href="img/project-10.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                    </div>
-                    <h6>UI / UX Design</h6>
-                    <span>Digital agency website design and development</span>
+                    <h6>Mr. Ranjit Singh Yadav</h6>
+                    <span>Provides free aducation to slim and underprivileged children, kinow as Khaki Wale Guru ji of Ayodhya</span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Project End -->
+    <!-- Previous Winners End -->
 
 
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- Award Committee Start -->
+    <div id="award_commitee" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Award Committe</h6>
+                <h6 class="section-title bg-white text-center text-warning px-3">Award Committee</h6>
                 <h1 class="display-6 mb-4">Our Award Committe Members</h1>
             </div>
             <div class="row g-4">
@@ -466,9 +473,9 @@
 </span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -483,9 +490,9 @@
 </span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -499,9 +506,9 @@
                                 <span>Secretary</span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -517,9 +524,9 @@
                                 <span>Joint Secretary</span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -533,9 +540,9 @@
                                 <span>Treasurer</span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -549,9 +556,9 @@
                                 <span>Auditor</span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -567,9 +574,9 @@
                                 <span>Committee Member</span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -577,12 +584,13 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Award Committee End -->
+
     <!--  Former Members Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Former Members</h6>
+                <h6 class="section-title bg-white text-center text-warning px-3">Former Members</h6>
                 <h1 class="display-6 mb-4">Our Former Members</h1>
             </div>
             <div class="row g-4">
@@ -596,9 +604,9 @@
 </span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -613,9 +621,9 @@
 </span>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-warning rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -628,10 +636,11 @@
 
 
     <!-- Testimonial Start -->
+    <!--
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+                <h6 class="section-title bg-white text-center text-warning px-3">Testimonial</h6>
                 <h1 class="display-6 mb-4">What Our Clients Say!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -640,7 +649,6 @@
                         <img class="flex-shrink-0 rounded-circle border p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU57ueI4ISQpQShshRM5x1JEpERSCSGleMIQ&s" alt="">
                         <div class="ms-4">
                             <h5 class="mb-1">Ananya Singh</h5>
-                            <!-- <span>CEO of Tech Innovators</span> -->
                         </div>
                     </div>
                     <p class="mb-0">Working with Omega Plus has been a game-changer for our business. Their innovative solutions and exceptional service have transformed our digital presence. We couldn't be happier with the results!</p>
@@ -650,7 +658,6 @@
                         <img class="flex-shrink-0 rounded-circle border p-1" src="https://media.istockphoto.com/id/1540766473/photo/young-adult-male-design-professional-smiles-for-camera.webp?b=1&s=170667a&w=0&k=20&c=y2ojpSYhJlE51oxRsJFnbJ5oPRzazCjkdqRuYWWXpjc=" alt="">
                         <div class="ms-4">
                             <h5 class="mb-1">Vivek Roy</h5>
-                            <!-- <span> Marketing Director at Creative Solutions</span> -->
                         </div>
                     </div>
                     <p class="mb-0">Omega Plus delivered beyond our expectations. Their team’s expertise and commitment to excellence are unmatched. They truly understand our needs and provide tailored solutions that drive our success..</p>
@@ -660,7 +667,6 @@
                         <img class="flex-shrink-0 rounded-circle border p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLlNf5jgOoa-aQGv7RmXrrkvbOK_7WNF6ZYA&s" alt="">
                         <div class="ms-4">
                             <h5 class="mb-1">Pankaj Tripathi</h5>
-                            <!-- <span>Founder of Green Earth Enterprises</span> -->
                         </div>
                     </div>
                     <p class="mb-0">From start to finish, Omega Plus has been a reliable partner in our digital journey. Their professionalism and creativity set them apart, and their solutions have significantly boosted our online engagement and growth.</p>
@@ -670,7 +676,6 @@
                         <img class="flex-shrink-0 rounded-circle border p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS67GUGhKU11Lj5vd36K8LVQOEiB5i6Hv9Xtw&s" alt="">
                         <div class="ms-4">
                             <h5 class="mb-1">Kritika Gupta</h5>
-                            <!-- <span>Operations Manager at Bright Future Co</span> -->
                         </div>
                     </div>
                     <p class="mb-0">Omega Plus exceeded all our expectations. Their dedication to understanding our vision and delivering innovative digital solutions has been phenomenal. We’ve seen remarkable growth and engagement thanks to their expertise and support.</p>
@@ -678,18 +683,20 @@
             </div>
         </div>
     </div>
+    -->
     <!-- Testimonial End -->
 
 
+
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div id="footer" class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Address</h5>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Rath, Hamirpur Uttar Pradesh</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9305946232</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>help.omegaplus@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8707530475</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>thesbaward@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -701,31 +708,28 @@
                     <h5 class="text-light mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="./about.html">About Us</a>
                     <a class="btn btn-link" href="./contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="./term_conditions.html">Terms & Condition</a>
-                    <a class="btn btn-link" href="./privacy_policy.html">Privacy Policy</a>
-                    <a class="btn btn-link" href="./refund.html">Refund Policy</a>
+                    <a class="btn btn-link" href="">Initiative Areas</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Gallery</h5>
                     <div class="row g-2">
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-1.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Anand_kumar.png" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-2.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Bhadariya_maharaj.png" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-3.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Dr_arun.png" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-4.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/mr_ranjeet.png" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-5.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/ms_fredericka.png" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-6.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/khan_Sir.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -734,7 +738,7 @@
                     <p>Submit your email here to get update from us.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <button type="button" class="btn btn-warning py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -743,7 +747,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Omega Plus</a>, All Right Reserved.
+                        &copy; <a href="#">thesbaward</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
@@ -757,7 +761,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-warning btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
