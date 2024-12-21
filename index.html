@@ -34,6 +34,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
 </head>
 
 <body>
@@ -71,19 +72,19 @@
 
 
 <!-- Brand & Logo Start -->
-<div class="container-fluid py-2 px-2 wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid  px-2 wow fadeIn" data-wow-delay="0.1s">
     <div class="row align-items-center text-start">
         <!-- Left Logo and Brand Name -->
         <div class="col-12 col-md-6 d-flex align-items-center">
-            <img src="img/award.png" alt="Logo" class="img-fluid me-3" style="max-width: 110px; height: auto;">
+            <img src="img/award.png" alt="Logo" class="img-fluid me-3 left-img" style="max-width: 80px; height: auto;">
             <div class="brand-box">
-                <h1 class="brand-name m-0">Swami Brahmanand Award</h1>
+                <h1 class="brand-name m-0" >Swami Brahmanand Award</h1>
             </div>
         </div>
 
         <!-- Right Image -->
         <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-            <img src="img/sblogo.png" alt="Right Image" class="img-fluid" style="max-width: 80px; height: auto;">
+            <img src="img/sblogo.png" alt="Right Image" class="right-img" style="max-width: 80px; height: auto;">
         </div>
     </div>
 </div>
@@ -119,8 +120,13 @@
     /* Optional for responsiveness */
     @media (max-width: 768px) {
         .brand-name {
-            font-size: 1.5rem; /* Smaller font for mobile */
+            font-size: 1.3rem; /* Smaller font for mobile */
+            text-align: center;
         }
+         .left-img { 
+        display: none; /* Hide the right image */
+
+    }
     }
 </style>
 
@@ -141,19 +147,18 @@
                 <a href="#award_commitee" class="nav-item nav-link"> Award Committee</a>
                 <a href="#" class="nav-item nav-link">Mission</a>
                 <a href="#footer" class="nav-item nav-link">Vision</a>
-                <a href="#footer" class="nav-item nav-link">Gallery</a>
+                <a href="#gallery" class="nav-item nav-link">Gallery</a>
                 <a href="#footer" class="nav-item nav-link">Media</a>
-                <a href="#about_us" class="nav-item nav-link">About Us</a>
-
-                <!-- <div class="nav-item dropdown">
+                <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-                        <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
+                        <a href="#about_swamiji" class="dropdown-item">Swami Bramhanand Biography</a>
+                        <a href="#" class="dropdown-item">Award History</a>
+                        <a href="#" class="dropdown-item">Award Application Criteria</a>
+                        <a href="#award_winners" class="dropdown-item">Award Winner Year Wise</a>
                     </div>
-                </div> -->
+                </div>
+                <a href="#about_us" class="nav-item nav-link">About Us</a>
                 <a href="#footer" class="nav-item nav-link">Contact Us</a>
             </div>
             <a href="" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block shadow">Nomination</a> 
@@ -219,43 +224,6 @@
     </div>
     <!-- Carousel End -->
 
-
-    <!-- Facts Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-certificate fa-4x text-warning mb-4"></i>
-                        <h5 class="mb-3">Years</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-users-cog fa-4x text-warning mb-4"></i>
-                        <h5 class="mb-3">Committee Members</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">7</h1>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-users fa-4x text-warning mb-4"></i>
-                        <h5 class="mb-3">Total Award Winners</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-check fa-4x text-warning mb-4"></i>
-                        <h5 class="mb-3">Regions</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">4</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Facts End -->
 
 
     <!-- About Start -->
@@ -344,7 +312,7 @@
 
 
     <!-- About swami ji Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="about_swamiji">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -454,6 +422,27 @@ Brahmanand</h1>
     </div>
     <!-- Previous Winners End -->
 
+
+    <!-- Gallery -->
+    <div class="text-center mx-auto mb-5 wow fadeInUp " id="gallery" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="section-title bg-white text-center text-warning px-3">Gallery</h6>
+            </div>
+    <div class="gallery">
+  <img src='img/Anand_kumar.png' alt=''>
+  <img src='img/Bhadariya_maharaj.png' alt=''>
+  <img src='img/Dr_arun.png' alt=''>
+  <img src='img/khan_Sir.jpg' alt=''>
+  <img src='img/dr.mukesh.png' alt=''>
+  <img src='img/dr.Surendra.png' alt=''>
+  <img src='img/harimohan.png' alt=''>
+  <img src='img/mr_ranjeet.png' alt=''>
+  <img src='img/ms_fredericka.png' alt=''>
+  <img src='img/devendra_mahan.png' alt=''>
+  <img src='img/Narendra.png' alt=''>
+  <img src='img/grover.png' alt=''>
+</div>
+
+<!-- Gallery End -->
 
     <!-- Award Committee Start -->
     <div id="award_commitee" class="container-xxl py-5">
@@ -633,22 +622,59 @@ Brahmanand</h1>
     </div>
     <!-- Former Members End -->
 
+    <!-- Facts Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-certificate fa-4x text-warning mb-4"></i>
+                        <h5 class="mb-3">Years</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-users-cog fa-4x text-warning mb-4"></i>
+                        <h5 class="mb-3">Committee Members</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">7</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-users fa-4x text-warning mb-4"></i>
+                        <h5 class="mb-3">Total Award Winners</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-check fa-4x text-warning mb-4"></i>
+                        <h5 class="mb-3">Regions</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">4</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
 
 
-    <!-- Testimonial Start -->
-    <!--
+
+
+    <!-- Testimonial Start 
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-warning px-3">Testimonial</h6>
-                <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+                <h6 class="section-title bg-white text-center text-warning px-3">Winners</h6>
+                <h1 class="display-6 mb-4">Award Winners Year Wise</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item bg-light rounded p-4">
                     <div class="d-flex align-items-center mb-4">
-                        <img class="flex-shrink-0 rounded-circle border p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU57ueI4ISQpQShshRM5x1JEpERSCSGleMIQ&s" alt="">
+                        <img class="flex-shrink-0 rounded-circle border p-1" src="img/Dr_arun.png" alt="">
                         <div class="ms-4">
-                            <h5 class="mb-1">Ananya Singh</h5>
+                            <h5 class="mb-1">Dr. Arun Kumar Pandey</h5>
                         </div>
                     </div>
                     <p class="mb-0">Working with Omega Plus has been a game-changer for our business. Their innovative solutions and exceptional service have transformed our digital presence. We couldn't be happier with the results!</p>
@@ -683,8 +709,10 @@ Brahmanand</h1>
             </div>
         </div>
     </div>
-    -->
+
     <!-- Testimonial End -->
+
+
 
 
 
