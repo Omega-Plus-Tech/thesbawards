@@ -112,14 +112,99 @@
 
 
 
-function openModal(imageSrc) {
-    let modal = document.getElementById("myModal");
-    let modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
-    modalImg.src = imageSrc;
-}
+// Select all nav links
+const navLinks = document.querySelectorAll(' .nav-item .dropdown-item');
 
-function closeModal() {
-    let modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
+// Select the navbar collapse element
+const navbarCollapse = document.querySelector('.navbar-collapse');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    // Close the navbar when a link is clicked
+    const isExpanded = navbarCollapse.classList.contains('show');
+    if (isExpanded) {
+      const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: true,
+      });
+    }
+  });
+});
+
+
+
+
+const gallery = document.querySelector('.gallery');
+const prevButton = document.querySelector('.nav-button.prev');
+const nextButton = document.querySelector('.nav-button.next');
+const zoomOverlay = document.querySelector('.zoom-overlay');
+const zoomedImage = document.querySelector('.zoomed-image');
+const closeButton = document.querySelector('.close-button');
+
+// Navigation logic
+let currentScroll = 0;
+const scrollAmount = gallery.clientWidth;
+
+prevButton.addEventListener('click', () => {
+  currentScroll -= scrollAmount;
+  if (currentScroll < 0) currentScroll = 0;
+  gallery.scrollTo({ left: currentScroll, behavior: 'smooth' });
+});
+
+nextButton.addEventListener('click', () => {
+  currentScroll += scrollAmount;
+  if (currentScroll > gallery.scrollWidth - gallery.clientWidth) {
+    currentScroll = gallery.scrollWidth - gallery.clientWidth;
+  }
+  gallery.scrollTo({ left: currentScroll, behavior: 'smooth' });
+});
+
+// Zoom logic
+document.querySelectorAll('.gallery img').forEach((img) => {
+  img.addEventListener('click', () => {
+    zoomedImage.src = img.src;
+    zoomOverlay.classList.add('visible');
+  });
+});
+
+// Close zoom
+closeButton.addEventListener('click', () => {
+  zoomOverlay.classList.remove('visible');
+  zoomedImage.src = '';
+});
+
+
+  // JavaScript to toggle hidden content
+  document.getElementById('readMoreBtn').addEventListener('click', function () {
+    const hiddenContent = document.getElementById('hiddenContent');
+    const button = this;
+
+    if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+        hiddenContent.style.display = 'block';
+        button.textContent = 'Read Less'; // Change button text
+    } else {
+        hiddenContent.style.display = 'none';
+        button.textContent = 'Read More'; // Reset button text
+    }
+});
+
+ // Adjust scroll position to account for fixed navbar
+ document.querySelectorAll('.navbar-nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const offset = document.querySelector('.navbar').offsetHeight; // Get the navbar height
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+            // Scroll to the adjusted position
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth',
+            });
+        }
+    });
+});
+
