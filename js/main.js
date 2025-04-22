@@ -173,9 +173,23 @@ closeButton.addEventListener('click', () => {
 });
 
 
-  // JavaScript to toggle hidden content
-  document.getElementById('readMoreBtn').addEventListener('click', function () {
-    const hiddenContent = document.getElementById('hiddenContent');
+  // JavaScript to toggle hidden content of about
+  document.getElementById('readMoreBtnAbout').addEventListener('click', function () {
+    const hiddenContent = document.getElementById('hiddenContentAbout');
+    const button = this;
+
+    if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+        hiddenContent.style.display = 'block';
+        button.textContent = 'Read Less'; // Change button text
+    } else {
+        hiddenContent.style.display = 'none';
+        button.textContent = 'Read More'; // Reset button text
+    }
+});
+
+// JavaScript to toggle hidden content of Concept
+document.getElementById('readMoreBtnConcept').addEventListener('click', function () {
+    const hiddenContent = document.getElementById('hiddenContentConcept');
     const button = this;
 
     if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
