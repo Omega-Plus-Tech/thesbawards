@@ -5,12 +5,35 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    /* overflow-x: hidden !important; */
 
 
 }
 
+.gallery-square {
+    width: 150px;           /* Set your desired size */
+    aspect-ratio: 1/1;      /* Makes it a square */
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 5px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .gallery-container {
     margin-left: 55px;
+    margin-top: 270px;
+
     position: relative;
     width: 90%;
     max-width: 1000px;
@@ -30,13 +53,13 @@ body {
     overflow:scroll;
 }
 
-img {
+/* img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;
-}
+} */
 
 img:hover {
     transform: scale(1.1);

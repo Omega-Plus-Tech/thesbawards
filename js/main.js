@@ -134,29 +134,9 @@ navLinks.forEach((link) => {
 
 
 const gallery = document.querySelector('.gallery');
-const prevButton = document.querySelector('.nav-button.prev');
-const nextButton = document.querySelector('.nav-button.next');
 const zoomOverlay = document.querySelector('.zoom-overlay');
 const zoomedImage = document.querySelector('.zoomed-image');
 const closeButton = document.querySelector('.close-button');
-
-// Navigation logic
-let currentScroll = 0;
-const scrollAmount = gallery.clientWidth;
-
-prevButton.addEventListener('click', () => {
-  currentScroll -= scrollAmount;
-  if (currentScroll < 0) currentScroll = 0;
-  gallery.scrollTo({ left: currentScroll, behavior: 'smooth' });
-});
-
-nextButton.addEventListener('click', () => {
-  currentScroll += scrollAmount;
-  if (currentScroll > gallery.scrollWidth - gallery.clientWidth) {
-    currentScroll = gallery.scrollWidth - gallery.clientWidth;
-  }
-  gallery.scrollTo({ left: currentScroll, behavior: 'smooth' });
-});
 
 // Zoom logic
 document.querySelectorAll('.gallery img').forEach((img) => {
@@ -166,10 +146,18 @@ document.querySelectorAll('.gallery img').forEach((img) => {
   });
 });
 
-// Close zoom
+// Close zoom when clicking the close button
 closeButton.addEventListener('click', () => {
   zoomOverlay.classList.remove('visible');
   zoomedImage.src = '';
+});
+
+// Close zoom when clicking outside the image
+zoomOverlay.addEventListener('click', (e) => {
+  if (e.target === zoomOverlay) {
+    zoomOverlay.classList.remove('visible');
+    zoomedImage.src = '';
+  }
 });
 
 
@@ -222,3 +210,257 @@ document.getElementById('readMoreBtnConcept').addEventListener('click', function
     });
 });
 
+
+// Dummy images for each year
+const yearImages = {
+  "2019": [
+    "img/gallery/2019/img1.jpg",
+    "img/gallery/2019/img2.jpg",
+    "img/gallery/2019/img3.jpg",
+    "img/gallery/2019/img4.jpg",
+    "img/gallery/2019/img5.jpg",
+    "img/gallery/2019/img6.jpg",
+    "img/gallery/2019/img7.jpg",
+    "img/gallery/2019/img8.jpg",
+    "img/gallery/2019/img9.jpg",
+    "img/gallery/2019/thumb1.jpg",
+    "img/gallery/2019/thumb2.jpg",
+    "img/gallery/2019/thumb3.jpg",
+    "img/gallery/2019/thumb4.jpg",
+  ],
+  "2020": [
+    "img/gallery/2020/img1.jpg",
+    "img/gallery/2020/img2.jpg",
+    "img/gallery/2020/img3.jpg",
+    "img/gallery/2020/img4.jpg",
+    "img/gallery/2020/img5.jpg",
+    "img/gallery/2020/img6.jpg",
+    "img/gallery/2020/img7.jpg",
+    "img/gallery/2020/img8.jpg",
+    "img/gallery/2020/img9.jpg",
+    "img/gallery/2020/img10.jpg",
+    "img/gallery/2020/img11.jpg",
+    "img/gallery/2020/img12.jpg",
+    "img/gallery/2020/img13.jpg",
+    "img/gallery/2020/img14.jpg",
+    "img/gallery/2020/img15.jpg",
+    "img/gallery/2020/img16.jpg",
+    "img/gallery/2020/img17.jpg",
+    "img/gallery/2020/img18.jpg",
+    "img/gallery/2020/img19.jpg",
+    "img/gallery/2020/img20.jpg",
+    "img/gallery/2020/img21.jpg",
+    "img/gallery/2020/img22.jpg",
+    "img/gallery/2020/img23.jpg",
+    "img/gallery/2020/img24.jpg",
+    "img/gallery/2020/img25.jpg",
+    "img/gallery/2020/img26.jpg",
+    "img/gallery/2020/img27.jpg",
+    "img/gallery/2020/thumb1.jpg",
+    "img/gallery/2020/thumb2.jpg",
+    "img/gallery/2020/thumb3.jpg",
+    "img/gallery/2020/thumb4.jpg",
+  ],
+  "2021": [
+    "img/gallery/2021/img1.jpg",
+    "img/gallery/2021/img2.jpg",
+    "img/gallery/2021/img3.jpg",
+    "img/gallery/2021/img4.jpg",
+    "img/gallery/2021/img5.jpg",
+    "img/gallery/2021/img6.jpg",
+    "img/gallery/2021/img7.jpg",
+    "img/gallery/2021/img8.jpg",
+    "img/gallery/2021/img9.jpg",
+    "img/gallery/2021/img10.jpg",
+    "img/gallery/2021/img11.jpg",
+    "img/gallery/2021/img12.jpg",
+    "img/gallery/2021/img13.jpg",
+    "img/gallery/2021/img14.jpg",
+    "img/gallery/2021/img15.jpg",
+    "img/gallery/2021/img16.jpg",
+    "img/gallery/2021/img17.jpg",
+    "img/gallery/2021/img18.jpg",
+    "img/gallery/2021/img19.jpg",
+    "img/gallery/2021/img20.jpg",
+    "img/gallery/2021/img21.jpg",
+    "img/gallery/2021/img22.jpg",
+    "img/gallery/2021/img23.jpg",
+    "img/gallery/2021/img24.jpg",
+    "img/gallery/2021/img25.jpg",
+    "img/gallery/2021/img26.jpg",
+    "img/gallery/2021/img27.jpg",
+    "img/gallery/2021/img28.jpg",
+    "img/gallery/2021/img29.jpg",
+    "img/gallery/2021/img30.jpg",
+    "img/gallery/2021/img31.jpg",
+    "img/gallery/2021/img32.jpg",
+    "img/gallery/2021/img33.jpg",
+    "img/gallery/2021/thumb1.jpg",
+    "img/gallery/2021/thumb2.jpg",
+    "img/gallery/2021/thumb3.jpg",
+    "img/gallery/2021/thumb4.jpg",
+  ],
+  "2022": [
+    
+    "img/gallery/2022/img1.jpg",
+    "img/gallery/2022/img2.jpg",
+    "img/gallery/2022/img3.jpg",
+    "img/gallery/2022/img4.jpg",
+    "img/gallery/2022/img5.jpg",
+    "img/gallery/2022/img6.jpg",
+    "img/gallery/2022/img7.jpg",
+    "img/gallery/2022/img8.jpg",
+    "img/gallery/2022/img9.jpg",
+    "img/gallery/2022/img10.jpg",
+    "img/gallery/2022/img11.jpg",
+    "img/gallery/2022/img12.jpg",
+    "img/gallery/2022/img13.jpg",
+    "img/gallery/2022/img14.jpg",
+    "img/gallery/2022/img15.jpg",
+    "img/gallery/2022/img16.jpg",
+    "img/gallery/2022/img17.jpg",
+    "img/gallery/2022/img18.jpg",
+    "img/gallery/2022/img19.jpg",
+    "img/gallery/2022/img20.jpg",
+    "img/gallery/2022/img21.jpg",
+    "img/gallery/2022/img22.jpg",
+    "img/gallery/2022/img23.jpg",
+    "img/gallery/2022/img24.jpg",
+    "img/gallery/2022/img25.jpg",
+    "img/gallery/2022/img26.jpg",
+    "img/gallery/2022/img27.jpg",
+    "img/gallery/2022/img28.jpg",
+    "img/gallery/2022/img29.jpg",
+    "img/gallery/2022/img30.jpg",
+    "img/gallery/2022/img31.jpg",
+    "img/gallery/2022/thumb1.jpg",
+    "img/gallery/2022/thumb2.jpg",
+    "img/gallery/2022/thumb3.jpg",
+    "img/gallery/2022/thumb4.jpg",
+  ],
+  "2023": [
+    
+    "img/gallery/2023/img1.jpg",
+    "img/gallery/2023/img2.jpg",
+    "img/gallery/2023/img3.jpg",
+    "img/gallery/2023/img4.jpg",
+    "img/gallery/2023/img5.jpg",
+    "img/gallery/2023/img6.jpg",
+    "img/gallery/2023/img7.jpg",
+    "img/gallery/2023/img8.jpg",
+    "img/gallery/2023/img9.jpg",
+    "img/gallery/2023/img10.jpg",
+    "img/gallery/2023/img11.jpg",
+    "img/gallery/2023/img12.jpg",
+    "img/gallery/2023/img13.jpg",
+    "img/gallery/2023/img14.jpg",
+    "img/gallery/2023/img15.jpg",
+    "img/gallery/2023/img16.jpg",
+    "img/gallery/2023/img17.jpg",
+    "img/gallery/2023/img18.jpg",
+    "img/gallery/2023/img19.jpg",
+    "img/gallery/2023/img20.jpg",
+    "img/gallery/2023/img21.jpg",
+    "img/gallery/2023/img22.jpg",
+    "img/gallery/2023/img23.jpg",
+    "img/gallery/2023/img24.jpg",
+    "img/gallery/2023/img25.jpg",
+    "img/gallery/2023/img26.jpg",
+    "img/gallery/2023/img27.jpg",
+    "img/gallery/2023/img28.jpg",
+    "img/gallery/2023/img29.jpg",
+    "img/gallery/2023/img30.jpg",
+    "img/gallery/2023/img31.jpg",
+    "img/gallery/2023/img32.jpg",
+    "img/gallery/2023/img33.jpg",
+    "img/gallery/2023/img34.jpg",
+    "img/gallery/2023/img35.jpg",
+    "img/gallery/2023/img36.jpg",
+    "img/gallery/2023/img37.jpg",
+    "img/gallery/2023/img38.jpg",
+    "img/gallery/2023/img39.jpg",
+    "img/gallery/2023/thumb1.jpg",
+    "img/gallery/2023/thumb2.jpg",
+    "img/gallery/2023/thumb3.jpg",
+    "img/gallery/2023/thumb4.jpg",
+  ],
+  "2024": [
+    "img/gallery/2024/img1.jpg",
+    "img/gallery/2024/img2.jpg",
+    "img/gallery/2024/img3.jpg",
+    "img/gallery/2024/img4.jpg",
+    "img/gallery/2024/img5.jpg",
+    "img/gallery/2024/img6.jpg",
+    "img/gallery/2024/img7.jpg",
+    "img/gallery/2024/img8.jpg",
+    "img/gallery/2024/img9.jpg",
+    "img/gallery/2024/img10.jpg",
+    "img/gallery/2024/img11.jpg",
+    "img/gallery/2024/img12.jpg",
+    "img/gallery/2024/img13.jpg",
+    "img/gallery/2024/img14.jpg",
+    "img/gallery/2024/img15.jpg",
+    "img/gallery/2024/img16.jpg",
+    "img/gallery/2024/img17.jpg",
+    "img/gallery/2024/img18.jpg",
+    "img/gallery/2024/img19.jpg",
+    "img/gallery/2024/img20.jpg",
+    "img/gallery/2024/img21.jpg",
+    "img/gallery/2024/img22.jpg",
+    "img/gallery/2024/img23.jpg",
+    "img/gallery/2024/img24.jpg",
+    "img/gallery/2024/img25.jpg",
+    "img/gallery/2024/img26.jpg",
+    "img/gallery/2024/img27.jpg",
+    "img/gallery/2024/img28.jpg",
+    "img/gallery/2024/img29.jpg",
+    "img/gallery/2024/img30.jpg",
+    "img/gallery/2024/img31.jpg",
+    "img/gallery/2024/img32.jpg",
+    "img/gallery/2024/img33.jpg",
+    "img/gallery/2024/img34.jpg",
+    "img/gallery/2024/img35.jpg",
+    "img/gallery/2024/img36.jpg",
+    "img/gallery/2024/img37.jpg",
+    "img/gallery/2024/img38.jpg",
+    "img/gallery/2024/img39.jpg",
+    "img/gallery/2024/img40.jpg",
+    "img/gallery/2024/img41.jpg",
+    "img/gallery/2024/img42.jpg",
+    "img/gallery/2024/img43.jpg",
+    "img/gallery/2024/img44.jpg",
+    "img/gallery/2024/img45.jpg",
+    "img/gallery/2024/img46.jpg",
+    "img/gallery/2024/img47.jpg",
+    "img/gallery/2024/img48.jpg",
+    "img/gallery/2024/img49.jpg",
+    "img/gallery/2024/img50.jpg",
+    "img/gallery/2024/img51.jpg",
+    "img/gallery/2024/img52.jpg",
+    "img/gallery/2024/img53.jpg",
+    "img/gallery/2024/img54.jpg",
+    "img/gallery/2024/img55.jpg",
+    "img/gallery/2024/img56.jpg",
+    "img/gallery/2024/img57.jpg",
+    "img/gallery/2024/thumb1.jpg",
+    "img/gallery/2024/thumb2.jpg",
+    "img/gallery/2024/thumb3.jpg",
+    "img/gallery/2024/thumb4.jpg",
+  ]
+};
+
+document.querySelectorAll('.year-gallery-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const year = this.getAttribute('data-year');
+    const images = yearImages[year] || [];
+    const galleryDiv = document.getElementById('yearGalleryImages');
+    galleryDiv.innerHTML = images.map(src => `
+      <div class="col-md-3 col-6">
+        <img src="${src}" class="img-fluid rounded mb-2" alt="">
+      </div>
+    `).join('');
+    document.getElementById('yearGalleryLabel').textContent = `Gallery - ${year}`;
+    var modal = new bootstrap.Modal(document.getElementById('yearGalleryModal'));
+    modal.show();
+  });
+});
