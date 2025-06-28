@@ -466,12 +466,14 @@ document.querySelectorAll('.year-gallery-card').forEach(card => {
 });
 
 
-// Close navbar dropdown on nav-link click (for mobile)
+// Close navbar on nav-link or dropdown-item click, but NOT on dropdown-toggle
 document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(link => {
     link.addEventListener('click', function () {
+        // If this is a dropdown-toggle, do nothing (let Bootstrap handle it)
+        if (this.classList.contains('dropdown-toggle')) return;
+
         const navbarCollapse = document.getElementById('navbarCollapse');
         if (navbarCollapse.classList.contains('show')) {
-            // Bootstrap 5 uses collapse('hide')
             const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
             if (bsCollapse) {
                 bsCollapse.hide();
@@ -479,3 +481,4 @@ document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').f
         }
     });
 });
+
