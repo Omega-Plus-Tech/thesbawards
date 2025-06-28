@@ -464,3 +464,18 @@ document.querySelectorAll('.year-gallery-card').forEach(card => {
     modal.show();
   });
 });
+
+
+// Close navbar dropdown on nav-link click (for mobile)
+document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(link => {
+    link.addEventListener('click', function () {
+        const navbarCollapse = document.getElementById('navbarCollapse');
+        if (navbarCollapse.classList.contains('show')) {
+            // Bootstrap 5 uses collapse('hide')
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+                bsCollapse.hide();
+            }
+        }
+    });
+});
