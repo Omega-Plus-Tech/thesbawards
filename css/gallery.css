@@ -1,4 +1,4 @@
-/* General Styling */
+General Styling
 body {
     margin: 0;
     padding: 0;
@@ -32,11 +32,11 @@ body {
 
 .gallery-container {
     margin-left: 55px;
-    margin-top: 270px;
+    /* margin-top: 270px; */
 
     position: relative;
     width: 90%;
-    max-width: 1000px;
+    max-width: auto;
     height: 500px;
     display: flex;
     justify-content: center;
@@ -173,5 +173,4 @@ img:hover {
         top: 40%;
         transform: translateY(-40%);
     }
-    
 }
