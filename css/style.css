@@ -19,6 +19,75 @@ html {
 }
 
 
+.back-to-top {
+  position: fixed;
+  bottom: 5px;
+  right: 25px;
+  z-index: 1000;
+  background-color: #ffc107;
+  color: #000;
+  font-size: 24px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+  border-radius: 50%;
+}
+
+.back-to-top:hover {
+  background-color: #ff9800;
+  color: #fff;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Attention-grabbing bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+
+.floating-nomination-banner {
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  background-color: #ff4107;
+  color: green;
+  font-weight: bold;
+  padding: 12px 16px;
+  border-radius: 30%;
+  font-size: 16px;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: pulse 1.5s infinite;
+  transition: all 0.3s ease;
+}
+.floating-nomination-banner:hover {
+  background-color: #ff4107;
+  color: green;
+  transform: scale(1.05);
+}
+@keyframes pulse {
+  0% { background-color: #ffc107; }
+  50% { background-color: var(--warning); }
+  100% { background-color: #ffff; }
+}
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
