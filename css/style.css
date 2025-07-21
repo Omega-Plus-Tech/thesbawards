@@ -584,3 +584,11 @@ html {
     display: block;
 }
 
+#imageViewModal .modal-body {
+  background-color: var(--warning);
+}
+#imageViewModal img {
+  max-height: 90vh;
+  object-fit: contain;
+}
+

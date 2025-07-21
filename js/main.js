@@ -135,7 +135,7 @@ navLinks.forEach((link) => {
 
 const gallery = document.querySelector('.gallery');
 const zoomOverlay = document.querySelector('.zoom-overlay');
-const zoomedImage = document.querySelector('.zoomed-image');
+// const zoomedImage = document.querySelector('.zoomed-image');
 const closeButton = document.querySelector('.close-button');
 
 // // Zoom logic
@@ -481,4 +481,37 @@ document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').f
         }
     });
 });
+
+
+
+
+  document.querySelectorAll('.year-gallery-card').forEach(card => {
+  card.addEventListener('click', function () {
+    const year = this.getAttribute('data-year');
+    const images = yearImages[year] || [];
+    const galleryDiv = document.getElementById('yearGalleryImages');
+    
+    galleryDiv.innerHTML = images.map(src => `
+      <div class="col-md-3 col-6">
+        <img src="${src}" class="img-fluid rounded mb-2 gallery-img" alt="">
+      </div>
+    `).join('');
+
+    document.getElementById('yearGalleryLabel').textContent = `Gallery - ${year}`;
+    const modal = new bootstrap.Modal(document.getElementById('yearGalleryModal'));
+    modal.show();
+
+    // After DOM update, bind click event to images
+    setTimeout(() => {
+      document.querySelectorAll('.gallery-img').forEach(img => {
+        img.addEventListener('click', () => {
+          document.getElementById('fullImageView').src = img.src;
+          const imageModal = new bootstrap.Modal(document.getElementById('imageViewModal'));
+          imageModal.show();
+        });
+      });
+    }, 100); // Allow DOM to update
+  });
+});
+
 
