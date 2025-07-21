@@ -583,12 +583,20 @@ html {
     object-fit: cover;
     display: block;
 }
-
-#imageViewModal .modal-body {
-  background-color: var(--warning);
+.lb-close {
+  background: url('https://img.icons8.com/ios-filled/100/FAB005/close-window.png') no-repeat center !important;
+  background-size: contain !important;
 }
-#imageViewModal img {
-  max-height: 90vh;
-  object-fit: contain;
+
+
+
+ /* Yellow close button for year-wise modal */
+  #yearGalleryModal .btn-close {
+    filter: invert(62%) sepia(100%) saturate(1375%) hue-rotate(10deg) brightness(106%) contrast(105%);
+  }
+
+
+.modal-title{
+    color:var(--warning)
 }
 

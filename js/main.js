@@ -450,17 +450,22 @@ const yearImages = {
 };
 
 document.querySelectorAll('.year-gallery-card').forEach(card => {
-  card.addEventListener('click', function() {
+  card.addEventListener('click', function () {
     const year = this.getAttribute('data-year');
     const images = yearImages[year] || [];
     const galleryDiv = document.getElementById('yearGalleryImages');
+
+    // Update gallery with Lightbox2-compatible markup
     galleryDiv.innerHTML = images.map(src => `
       <div class="col-md-3 col-6">
-        <img src="${src}" class="img-fluid rounded mb-2" alt="">
+        <a href="${src}" data-lightbox="year-${year}">
+          <img src="${src}" class="img-fluid rounded mb-2" alt="">
+        </a>
       </div>
     `).join('');
+
     document.getElementById('yearGalleryLabel').textContent = `Gallery - ${year}`;
-    var modal = new bootstrap.Modal(document.getElementById('yearGalleryModal'));
+    const modal = new bootstrap.Modal(document.getElementById('yearGalleryModal'));
     modal.show();
   });
 });
@@ -484,34 +489,5 @@ document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').f
 
 
 
-
-  document.querySelectorAll('.year-gallery-card').forEach(card => {
-  card.addEventListener('click', function () {
-    const year = this.getAttribute('data-year');
-    const images = yearImages[year] || [];
-    const galleryDiv = document.getElementById('yearGalleryImages');
-    
-    galleryDiv.innerHTML = images.map(src => `
-      <div class="col-md-3 col-6">
-        <img src="${src}" class="img-fluid rounded mb-2 gallery-img" alt="">
-      </div>
-    `).join('');
-
-    document.getElementById('yearGalleryLabel').textContent = `Gallery - ${year}`;
-    const modal = new bootstrap.Modal(document.getElementById('yearGalleryModal'));
-    modal.show();
-
-    // After DOM update, bind click event to images
-    setTimeout(() => {
-      document.querySelectorAll('.gallery-img').forEach(img => {
-        img.addEventListener('click', () => {
-          document.getElementById('fullImageView').src = img.src;
-          const imageModal = new bootstrap.Modal(document.getElementById('imageViewModal'));
-          imageModal.show();
-        });
-      });
-    }, 100); // Allow DOM to update
-  });
-});
 
 
