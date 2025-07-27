@@ -144,7 +144,7 @@ html {
     background: #f8f9fa; /* Light background for the box */
     border: 1px solid #e0e0e0; /* Subtle border for the box */
     box-shadow: 
-        2px 2px 5px rgba(0, 0, 0, 0.2), 
+        2px 2px 5px rgba(0, 0, 0, 0.2),
         4px 4px 10px rgba(0, 0, 0, 0.1); /* 3D shadow */
     padding: 10px 20px; /* Padding for the brand name */
     border-radius: 50px; /* Rounded corners */
@@ -154,7 +154,7 @@ html {
 /* 3D Text Effect */
 .brand-name {
     font-family: 'Poppins', sans-serif; /* Example custom font */
-    color: #ff4107; /* Gold color */
+    color: #5a3b5d; /* Gold color */
     font-size: 1.85rem; /* Adjust as needed */
     text-shadow:
         2px 2px 2px #b8efad, /* Sharp shadow */
@@ -467,6 +467,7 @@ html {
 /*** Team ***/
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+    margin: 5px;
 }
 
 .team-item .team-text {
@@ -474,6 +475,8 @@ html {
     height: 65px;
     overflow: hidden;
 }
+
+
 
 .team-item .team-title {
     position: absolute;
@@ -486,6 +489,7 @@ html {
     align-items: center;
     justify-content: center;
     transition: .5s;
+    color: #5a3b5d;
 }
 
 .team-item:hover .team-title {
@@ -513,6 +517,15 @@ html {
     top: 0;
 }
 
+.team-title h5 {
+    color: #5a3b5d;
+}
+.display-6{
+    color: #5a3b5d;
+}
+h5 {
+    color: #5a3b5d;
+}
 
 
 /*** Footer ***/
@@ -600,3 +613,12 @@ html {
     color:var(--warning)
 }
 
+.profession-title {
+    color: #5a3b5d;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+    background-color:var(--warning);
+    border-radius: 5px;
+}
