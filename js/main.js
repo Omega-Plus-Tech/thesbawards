@@ -489,5 +489,29 @@ document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').f
 
 
 
+// 1. Store bios in an object
+const teamBios = {
+    narendra: "Narendra Singh Lodhi belongs to a farmer family, he has done his graduation in agriculture from Brahmanand Mahavidyalaya Rath Hamirpur Uttar Pradesh and graduation in education from Dr. Harisingh Gour Vishwavidyalaya Sagar Madhya Pradesh.Currently working as a science teacher in Chitrakoot district UP.His special focus is to make arrangements for financial support for the educational needs of dedicated students struggling with financial problems by appealing to the society. He has also run successful missions for the treatment of dozens of poor helpless seriously ill people, which has saved the lives of many people.Narendra Singh is also known as a motivator among the youth and he also has a special contribution in enhancing the talents of the region.  He is very fond of reading books. He remains in touch with senior writers of Hindi literature. He writes articles to attract the youth towards books and also delivers books from his personal collection to the people. He even delivers books to their homes so that their interest in books increases and they have basic knowledge about various subjects and issues in society. At present, he is working to save the youth from false information being spread through social media.",
+    mukesh: "Dr. Mukesh Kumar is a passionate forest ecologist with roots in an agrarian family. He earned his undergraduate degree from Banaras Hindu University, Varanasi, and completed his postgraduate studies and Ph.D. at Jawaharlal Nehru University, New Delhi. He is currently working as a postdoctoral fellow at the National Institute of Science Education and Research (NISER), Bhubaneswar, and Jawaharlal Nehru University.His research primarily focuses on the ecology of Himalayan pine and oak forest ecosystems. Over the course of his academic journey, Dr. Kumar has been awarded several prestigious international fellowships and travel grants, including those from the British Ecological Society, the International Biogeography Society, and the DST-SERB, allowing him to present his work in countries such as the UK, Spain, Estonia, and Indonesia.Beyond academia, Dr. Kumar maintains a strong interest in sustainable agriculture. He has developed an Integrated Farming Model tailored to the drought-prone Bundelkhand region, reflecting his commitment to bridging ecological research and grassroots farming practices.",
+    // Add more as needed
+};
+
+// 2. Event listener for bio buttons
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.bio-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const member = this.getAttribute('data-member');
+            const bio = teamBios[member] || "Bio not available.";
+            // Set bio text in modal
+            document.getElementById('bioText').textContent = bio;
+            // Optional: set the modal title if you have member names in the object too
+            // document.getElementById('bioModalLabel').textContent = member.toUpperCase();
+
+            // Show modal via Bootstrap JS API
+            const bioModal = new bootstrap.Modal(document.getElementById('teamBioModal'));
+            bioModal.show();
+        });
+    });
+});
 
 

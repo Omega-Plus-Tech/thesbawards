@@ -527,6 +527,18 @@ h5 {
     color: #5a3b5d;
 }
 
+.img-bio-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.bio-btn {
+  /* Adjust bottom value if button appears too low. */
+  margin-bottom: 30px; /* optional for spacing */
+  z-index: 2;
+}
+
+
 
 /*** Footer ***/
 .footer .btn.btn-link {
