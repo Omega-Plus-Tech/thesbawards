@@ -634,3 +634,9 @@ h5 {
     background-color:var(--warning);
     border-radius: 5px;
 }
+
+.banner-image {
+  border: 1px solid #3a8008;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px gray;
+}
