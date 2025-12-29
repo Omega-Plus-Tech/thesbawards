@@ -446,7 +446,25 @@ const yearImages = {
     "img/gallery/2024/thumb2.webp",
     "img/gallery/2024/thumb3.webp",
     "img/gallery/2024/thumb4.webp",
-  ]
+  ],
+  "2025": [
+    "img/gallery/2025/img1.webp",
+    "img/gallery/2025/img2.webp",
+    "img/gallery/2025/img3.webp",
+    "img/gallery/2025/img4.webp",
+    "img/gallery/2025/img5.webp",
+    "img/gallery/2025/img6.webp",
+    "img/gallery/2025/img7.webp",
+    "img/gallery/2025/img8.webp",
+    "img/gallery/2025/img9.webp",
+    "img/gallery/2025/img10.webp",
+    "img/gallery/2025/img11.webp",
+    "img/gallery/2025/img12.webp",
+    "img/gallery/2025/thumb1.webp",
+    "img/gallery/2025/thumb2.webp",
+    "img/gallery/2025/thumb3.webp",
+    "img/gallery/2025/thumb4.webp",
+  ],
 };
 
 document.querySelectorAll('.year-gallery-card').forEach(card => {
