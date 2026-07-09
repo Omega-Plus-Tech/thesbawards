@@ -112,22 +112,21 @@
 
 
 
-// Select all nav links
-const navLinks = document.querySelectorAll(' .nav-item .dropdown-item');
-
-// Select the navbar collapse element
-const navbarCollapse = document.querySelector('.navbar-collapse');
+// Close the mobile menu after clicking a navigation item on either header shell.
+const navLinks = document.querySelectorAll('.site-nav__link, .mobile-bottom-nav__item, .navbar-nav .dropdown-item');
+const navbarCollapse = document.querySelector('#siteNav, #navbarCollapse');
 
 navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    // Close the navbar when a link is clicked
-    const isExpanded = navbarCollapse.classList.contains('show');
-    if (isExpanded) {
-      const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, {
-        toggle: true,
-      });
-    }
-  });
+    link.addEventListener('click', () => {
+        if (!navbarCollapse || typeof bootstrap === 'undefined' || !bootstrap.Collapse) {
+            return;
+        }
+
+        const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (collapseInstance) {
+            collapseInstance.hide();
+        }
+    });
 });
 
 
@@ -161,33 +160,35 @@ const closeButton = document.querySelector('.close-button');
 // });
 
 
-  // JavaScript to toggle hidden content of about
-  document.getElementById('readMoreBtnAbout').addEventListener('click', function () {
-    const hiddenContent = document.getElementById('hiddenContentAbout');
-    const button = this;
+    // JavaScript to toggle hidden content of about
+    const readMoreBtnAbout = document.getElementById('readMoreBtnAbout');
+    if (readMoreBtnAbout) {
+        readMoreBtnAbout.addEventListener('click', function () {
+            const hiddenContent = document.getElementById('hiddenContentAbout');
+            if (!hiddenContent) {
+                return;
+            }
 
-    if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
-        hiddenContent.style.display = 'block';
-        button.textContent = 'Read Less'; // Change button text
-    } else {
-        hiddenContent.style.display = 'none';
-        button.textContent = 'Read More'; // Reset button text
+            const shouldOpen = hiddenContent.style.display === 'none' || hiddenContent.style.display === '';
+            hiddenContent.style.display = shouldOpen ? 'block' : 'none';
+            this.textContent = shouldOpen ? 'Read Less' : 'Read More';
+        });
     }
-});
 
-// JavaScript to toggle hidden content of Concept
-document.getElementById('readMoreBtnConcept').addEventListener('click', function () {
-    const hiddenContent = document.getElementById('hiddenContentConcept');
-    const button = this;
+    // JavaScript to toggle hidden content of Concept
+    const readMoreBtnConcept = document.getElementById('readMoreBtnConcept');
+    if (readMoreBtnConcept) {
+        readMoreBtnConcept.addEventListener('click', function () {
+            const hiddenContent = document.getElementById('hiddenContentConcept');
+            if (!hiddenContent) {
+                return;
+            }
 
-    if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
-        hiddenContent.style.display = 'block';
-        button.textContent = 'Read Less'; // Change button text
-    } else {
-        hiddenContent.style.display = 'none';
-        button.textContent = 'Read More'; // Reset button text
+            const shouldOpen = hiddenContent.style.display === 'none' || hiddenContent.style.display === '';
+            hiddenContent.style.display = shouldOpen ? 'block' : 'none';
+            this.textContent = shouldOpen ? 'Read Less' : 'Read More';
+        });
     }
-});
 
  // Adjust scroll position to account for fixed navbar
  document.querySelectorAll('.navbar-nav a[href^="#"]').forEach(anchor => {
@@ -468,24 +469,30 @@ const yearImages = {
 };
 
 document.querySelectorAll('.year-gallery-card').forEach(card => {
-  card.addEventListener('click', function () {
-    const year = this.getAttribute('data-year');
-    const images = yearImages[year] || [];
-    const galleryDiv = document.getElementById('yearGalleryImages');
+    card.addEventListener('click', function () {
+        const year = this.getAttribute('data-year');
+        const images = yearImages[year] || [];
+        const galleryDiv = document.getElementById('yearGalleryImages');
+        const modalHost = document.getElementById('yearGalleryModal');
+        const modalLabel = document.getElementById('yearGalleryLabel');
 
-    // Update gallery with Lightbox2-compatible markup
-    galleryDiv.innerHTML = images.map(src => `
-      <div class="col-md-3 col-6">
-        <a href="${src}" data-lightbox="year-${year}">
-          <img src="${src}" class="img-fluid rounded mb-2" alt="">
-        </a>
-      </div>
-    `).join('');
+        if (!galleryDiv || !modalHost || !modalLabel || typeof bootstrap === 'undefined' || !bootstrap.Modal) {
+            return;
+        }
 
-    document.getElementById('yearGalleryLabel').textContent = `Gallery - ${year}`;
-    const modal = new bootstrap.Modal(document.getElementById('yearGalleryModal'));
-    modal.show();
-  });
+        // Update gallery with Lightbox2-compatible markup
+        galleryDiv.innerHTML = images.map(src => `
+            <div class="col-md-3 col-6">
+                <a href="${src}" data-lightbox="year-${year}">
+                    <img src="${src}" class="img-fluid rounded mb-2" alt="">
+                </a>
+            </div>
+        `).join('');
+
+        modalLabel.textContent = `Gallery - ${year}`;
+        const modal = new bootstrap.Modal(modalHost);
+        modal.show();
+    });
 });
 
 
@@ -495,9 +502,9 @@ document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').f
         // If this is a dropdown-toggle, do nothing (let Bootstrap handle it)
         if (this.classList.contains('dropdown-toggle')) return;
 
-        const navbarCollapse = document.getElementById('navbarCollapse');
-        if (navbarCollapse.classList.contains('show')) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        const legacyNavbarCollapse = document.getElementById('navbarCollapse');
+        if (legacyNavbarCollapse && legacyNavbarCollapse.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getInstance(legacyNavbarCollapse);
             if (bsCollapse) {
                 bsCollapse.hide();
             }
@@ -512,7 +519,7 @@ const teamBios = {
     narendra: "Narendra Singh Lodhi belongs to a farmer family, he has done his graduation in agriculture from Brahmanand Mahavidyalaya Rath Hamirpur Uttar Pradesh and graduation in education from Dr. Harisingh Gour Vishwavidyalaya Sagar Madhya Pradesh.Currently working as a science teacher in Chitrakoot district UP.His special focus is to make arrangements for financial support for the educational needs of dedicated students struggling with financial problems by appealing to the society. He has also run successful missions for the treatment of dozens of poor helpless seriously ill people, which has saved the lives of many people.Narendra Singh is also known as a motivator among the youth and he also has a special contribution in enhancing the talents of the region.  He is very fond of reading books. He remains in touch with senior writers of Hindi literature. He writes articles to attract the youth towards books and also delivers books from his personal collection to the people. He even delivers books to their homes so that their interest in books increases and they have basic knowledge about various subjects and issues in society. At present, he is working to save the youth from false information being spread through social media.",
     mukesh: "Dr. Mukesh Kumar is a passionate forest ecologist with roots in an agrarian family. He earned his undergraduate degree from Banaras Hindu University, Varanasi, and completed his postgraduate studies and Ph.D. at Jawaharlal Nehru University, New Delhi. He is currently working as a postdoctoral fellow at the National Institute of Science Education and Research (NISER), Bhubaneswar, and Jawaharlal Nehru University.His research primarily focuses on the ecology of Himalayan pine and oak forest ecosystems. Over the course of his academic journey, Dr. Kumar has been awarded several prestigious international fellowships and travel grants, including those from the British Ecological Society, the International Biogeography Society, and the DST-SERB, allowing him to present his work in countries such as the UK, Spain, Estonia, and Indonesia.Beyond academia, Dr. Kumar maintains a strong interest in sustainable agriculture. He has developed an Integrated Farming Model tailored to the drought-prone Bundelkhand region, reflecting his commitment to bridging ecological research and grassroots farming practices.",
     indrapal: "Indra Pal Singh Rajput was born in a farmer family of Jarakhar, a small village in UP. Almost all the villagers of Jarakhar village participated enthusiastically in the freedom struggle. The highest number of freedom fighters in the district was also in Jarakhar, more than 60. In 1938, the Congress session was also held in Jarakhar. At that time Swami Brahmanand was the District President of Congress. Pandit Jawaharlal Nehru, Govind Ballabh Pant and hundreds of people participated in that session. The great freedom fighter from the village, Shri Shripat Sahay Rawat, who went to jail five times in the freedom struggle, was also an MLA twice.My primary education was completed in the village itself.I did my graduation from Brahmanand Mahavidyalaya Rath. After doing Bachelor of Education from DIET Charkhari, I am currently working as a teacher. And I am constantly giving momentum to the thoughts of Swami Brahmanand ji and also working to take my society towards education by removing superstition, hypocrisy and rituals prevalent in the society.",
-    manoharsingh: "Manohar Singh belongs to a farmer family, resident of village Pawai, Tehsil Sarila district Hamirpur Uttar Pradesh. His current educational qualification is D-Pharma, M.B.A. As a profession he is a medicine trader.Working as a social worker since his student days, in his village he plays an important role in organizing, mass marriages of very low cost weddings through Siyamata Samajik Jankalyan Samiti 14 years,Present time Jila Lodhi samaj Kalyan Samiti Rath,Hamirpur U.P. since last 5 years.In Rath Hamirpur area he is working very actively for the last eight years for the promotion of educational and social thoughts of Swami Brahmanand ji through Lakshya Parivar Rath organization.He also works promptly from time to time for various educational events and for helping economically weak students.",
+    manoharsingh: "Manohar Singh belongs to a farmer family, resident of village Pawai, Tehsil Sarila district Hamirpur Uttar Pradesh. His current educational qualification is D-Pharma, M.B.A. As a profession he is a medicine trader.Working as a social worker since his student days, in his village he plays an important role in organizing, mass marriages of very low cost weddings through Siyamata Samajik Jankalyan Samiti 14 years,Present time Jila Lodhi samaj Kalyan Samiti Rath,Hamirpur U.P. since last 7 years.In Rath Hamirpur area he is working very actively for the last eight years for the promotion of educational and social thoughts of Swami Brahmanand ji through Lakshya Parivar Rath organization.He also works promptly from time to time for various educational events and for helping economically weak students.",
 
     devendra: "Devendra Mahan comes from an elite farmer family and social worker family of the region, he is a resident of village Sikrodha Tehsil Sarila District Hamirpur which is situated on the banks of Betwa river. Along with being highly educated and a businessman, he always plays a leading role in humanitarian works, he is also working relentlessly with the thought of spreading the teachings of Swami Brahmanand ji, India's first saint MP, freedom fighter, the sacrifice idol who brought about an education revolution in Bundelkhand, to the masses.",
 
@@ -526,13 +533,19 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const member = this.getAttribute('data-member');
             const bio = teamBios[member] || "Bio not available.";
+            const bioText = document.getElementById('bioText');
+            const bioModalHost = document.getElementById('teamBioModal');
+
+            if (!bioText || !bioModalHost || typeof bootstrap === 'undefined' || !bootstrap.Modal) {
+                return;
+            }
             // Set bio text in modal
-            document.getElementById('bioText').textContent = bio;
+            bioText.textContent = bio;
             // Optional: set the modal title if you have member names in the object too
             // document.getElementById('bioModalLabel').textContent = member.toUpperCase();
 
             // Show modal via Bootstrap JS API
-            const bioModal = new bootstrap.Modal(document.getElementById('teamBioModal'));
+            const bioModal = new bootstrap.Modal(bioModalHost);
             bioModal.show();
         });
     });
