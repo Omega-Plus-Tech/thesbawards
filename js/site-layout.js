@@ -89,7 +89,9 @@
           <div class="row g-4">
             <div class="col-lg-4 col-md-6">
               <div class="footer-brand mb-3">
-                <img src="img/icons/sblogo.svg" alt="Award logo" />
+                <a href="index.html" aria-label="Swami Brahmanand Award home">
+                  <img src="img/icons/sblogo.svg" alt="Award logo" />
+                </a>
                 <div>
                   <h5 class="mb-0 text-white">Swami Brahmanand Award</h5>
                   <p class="mb-0 text-white-50">Recognizing service in education and Goseva.</p>
@@ -130,7 +132,7 @@
                     <div class="text-white-50 small">Address</div>
                     <div class="text-white">Apex School Building, Main Road, Pathan Pura, Rath, Hamirpur, Uttar Pradesh</div>
                   </div>
-                  <div class="text-end">
+                  <div class="">
                     <div class="text-white-50 small">Email</div>
                     <a class="text-gold text-decoration-none" href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>
                   </div>
