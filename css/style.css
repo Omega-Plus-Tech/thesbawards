@@ -1420,3 +1420,222 @@ h5 {
   border-radius: 10px;
   box-shadow: 0 8px 24px gray;
 }
+
+
+
+
+
+.card-title {
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.card-description {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Call-to-action Button style */
+.nominate-btn {
+    display: inline-block;
+    background-color: #ea580c; /* High-visibility traditional deep orange accent */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(234, 88, 12, 0.3);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nominate-btn:hover {
+    background-color: #c2410c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -3px rgba(194, 65, 12, 0.4);
+}
+
+
+
+/* =========================================
+   NOMINATION POPUP STYLES
+   ========================================= */
+
+#nomination-popup *, #nomination-popup *::before, #nomination-popup *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background Overlay */
+.nomination-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* The Card */
+.nomination-card {
+    background: #ffffff;
+    width: 90%;
+    max-width: 750px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: popupScaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popupScaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #1e293b;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #f1f5f9;
+    transform: scale(1.05);
+}
+
+/* Image Section */
+.card-image-section {
+    flex: 1.1;
+    min-height: 320px;
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content Section */
+.card-content-section {
+    flex: 1.2;
+    padding: 40px !important; /* The !important forces your site to respect this padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    min-width: 0; /* CRITICAL FIX: Stops the flex container from expanding past the card width */
+    width: 100%;
+}
+.badge {
+    background-color: #fef3c7;
+    color: #d97706;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.card-description {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Button */
+.nominate-btn {
+    display: inline-block !important; /* Forces it to behave like a button, not text */
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    color: #ffffff !important; /* Ensures text stays white */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 32px !important;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.25);
+    transition: all 0.3s ease;
+    border: none;
+    line-height: 1.5;
+    white-space: nowrap; /* Prevents the text from wrapping awkwardly */
+    flex-shrink: 0; /* Prevents the button from being squished at the bottom */
+}
+.nominate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.4);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+/* Mobile Responsive - Updated padding */
+@media (max-width: 640px) {
+    .nomination-card {
+        flex-direction: column;
+        max-width: 400px;
+        width: 90%;
+        max-height: 90vh; /* Prevents the card from being taller than the screen */
+        overflow-y: auto; /* Allows scrolling inside the card if needed */
+    }
+    .card-image-section { 
+        min-height: 240px; /* Gives the image a better proportion on phones */
+        flex: none;
+    }
+    .card-content-section { 
+        padding: 25px !important; /* Safe padding for mobile borders */
+        flex: none;
+    }
+    .card-title { 
+        font-size: 20px; 
+    }
+    .close-btn { 
+        top: 12px; 
+        right: 12px; 
+        background: #ffffff; /* Ensures the close button is visible over the image */
+    }
+}

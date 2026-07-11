@@ -552,3 +552,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/* =========================================
+   NOMINATION POPUP LOGIC
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("nomination-popup");
+    const closeBtn = document.getElementById("close-popup");
+
+    // Only run this if the popup exists on the current page
+    if (popup && closeBtn) {
+        
+        function dismissPopup() {
+            popup.style.opacity = "0";
+            // Wait for the fade-out transition to finish before hiding completely
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 300); 
+        }
+
+        // Close when clicking the X button
+        closeBtn.addEventListener("click", dismissPopup);
+
+        // Close when clicking the dark background overlay
+        popup.addEventListener("click", function (event) {
+            if (event.target === popup) {
+                dismissPopup();
+            }
+        });
+    }
+});
