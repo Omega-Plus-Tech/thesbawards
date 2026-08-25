@@ -1495,11 +1495,47 @@ h5 {
     width: 90%;
     max-width: 750px;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible !important;
     position: relative;
     display: flex;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     animation: popupScaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Top Announcement Label */
+.announcement-label {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 22px;
+
+    background: linear-gradient(
+        135deg,
+        #d4af37 0%,
+        #b8860b 100%
+    );
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 6px 18px rgba(184, 134, 11, 0.28);
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    white-space: nowrap;
+    z-index: 20;
 }
 
 @keyframes popupScaleUp {
@@ -1551,91 +1587,288 @@ h5 {
 /* Content Section */
 .card-content-section {
     flex: 1.2;
-    padding: 40px !important; /* The !important forces your site to respect this padding */
+    padding: 10px 30px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+
     box-sizing: border-box;
-    min-width: 0; /* CRITICAL FIX: Stops the flex container from expanding past the card width */
+    min-width: 0;
     width: 100%;
-}
-.badge {
-    background-color: #fef3c7;
-    color: #d97706;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 6px 12px;
-    border-radius: 100px;
-    margin-bottom: 16px;
+
+    /* Premium soft background */
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212, 175, 55, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #ffffff 0%, #faf9f6 100%);
 }
 
-.card-title {
-    color: #0f172a;
-    font-size: 24px;
+
+/* ================================
+   ANNOUNCEMENT BADGE
+================================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    background: rgba(184, 134, 11, 0.10);
+    color: #A16207;
+
     font-weight: 700;
-    line-height: 1.3;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    padding: 7px 12px;
+    border-radius: 50px;
+
+    border: 1px solid rgba(184, 134, 11, 0.18);
+
+    margin: 0 0 14px 0 !important;
+}
+
+
+/* ================================
+   PERSON NAME
+================================ */
+
+.card-title {
+    color: #1E293B !important;
+
+    font-size: 30px;
+    font-weight: 750;
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+
+    margin: 0 0 10px 0 !important;
+}
+
+
+/* Optional subtitle / nomination text */
+
+.nomination-label {
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #64748b;
+
     margin-bottom: 14px;
 }
 
-.card-description {
-    color: #475569;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 25px;
+
+/* ================================
+   AWARD HIGHLIGHT
+================================ */
+
+.award-highlight {
     width: 100%;
     box-sizing: border-box;
+
+    padding: 14px 16px;
+    margin-bottom: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.10),
+            rgba(255, 255, 255, 0.7)
+        );
+
+    border-left: 4px solid #c89b2c;
+    border-radius: 10px;
+
+    color: #1e293b;
+
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
-/* Button */
+.award-highlight span {
+    display: block;
+
+    color: #a16207;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    margin-bottom: 3px;
+}
+
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.card-description {
+    color: #64748b;
+
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    margin: 0 0 24px 0;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    max-width: 540px;
+}
+
+.card-description strong {
+    color: #334155;
+    font-weight: 650;
+}
+
+
+/* ================================
+   CTA BUTTON
+================================ */
+
 .nominate-btn {
-    display: inline-block !important; /* Forces it to behave like a button, not text */
-    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-    color: #ffffff !important; /* Ensures text stays white */
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37 0%,
+            #b8860b 100%
+        );
+
+    color: #ffffff !important;
+
     text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 14px 32px !important;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.25);
-    transition: all 0.3s ease;
-    border: none;
-    line-height: 1.5;
-    white-space: nowrap; /* Prevents the text from wrapping awkwardly */
-    flex-shrink: 0; /* Prevents the button from being squished at the bottom */
-}
-.nominate-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.4);
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+
+    font-weight: 700;
+    font-size: 15px;
+
+    padding: 14px 28px !important;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 6px 18px rgba(184, 134, 11, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-/* Mobile Responsive - Updated padding */
+.nominate-btn:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e0bd4b 0%,
+            #c89212 100%
+        );
+
+    box-shadow:
+        0 10px 28px rgba(184, 134, 11, 0.32);
+}
+
+.nominate-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
 @media (max-width: 640px) {
+    .announcement-label {
+        top: -15px;
+
+        padding: 8px 16px;
+
+        font-size: 9px;
+        letter-spacing: 0.1em;
+    }
+
     .nomination-card {
         flex-direction: column;
-        max-width: 400px;
-        width: 90%;
-        max-height: 90vh; /* Prevents the card from being taller than the screen */
-        overflow-y: auto; /* Allows scrolling inside the card if needed */
+
+        width: 92%;
+        max-width: 430px;
+
+        max-height: 90vh;
+        overflow-y: auto;
+
+        border-radius: 22px;
     }
-    .card-image-section { 
-        min-height: 240px; /* Gives the image a better proportion on phones */
+
+    .card-image-section {
+        min-height: 230px;
         flex: none;
     }
-    .card-content-section { 
-        padding: 25px !important; /* Safe padding for mobile borders */
+
+    .card-content-section {
+        padding: 28px 24px 30px !important;
         flex: none;
     }
-    .card-title { 
-        font-size: 20px; 
+
+    .badge {
+        font-size: 10px;
+        padding: 6px 10px;
+        margin-bottom: 10px;
     }
-    .close-btn { 
-        top: 12px; 
-        right: 12px; 
-        background: #ffffff; /* Ensures the close button is visible over the image */
+
+    .card-title {
+        font-size: 26px;
+    }
+
+    .nomination-label {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .award-highlight {
+        font-size: 15px;
+        padding: 12px 14px;
+        margin-bottom: 14px;
+    }
+
+    .card-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .nominate-btn {
+        width: 100%;
+        padding: 14px 20px !important;
+    }
+
+    .close-btn {
+        top: 12px;
+        right: 12px;
     }
 }
