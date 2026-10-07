@@ -50,10 +50,16 @@
             <i class="bi bi-award-fill text-gold"></i>
             <span>Swami Brahmanand Award</span>
           </div>
+          <!-- Nominations for 2026 are closed; they reopen in 2027. Button hidden until then.
           <a class="topbar-call topbar-nominate" href="awards.html#nomination">
             <i class="bi bi-award"></i>
             <span>Nominate Now</span>
           </a>
+          -->
+          <span class="topbar-note text-white-50 small">
+            <i class="bi bi-info-circle"></i>
+            Nominations closed · reopen 2027
+          </span>
         </div>
       </div>
       <header class="site-header">
@@ -66,8 +72,10 @@
                 <small>Award</small>
               </span>
             </a>
-            <button class="navbar-toggler site-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="site-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation menu">
+              <i class="bi bi-list site-toggler__open"></i>
+              <i class="bi bi-x-lg site-toggler__close"></i>
+              <span class="site-toggler__label">Menu</span>
             </button>
           </div>
           <div class="collapse site-nav-collapse" id="siteNav">
